@@ -7,14 +7,14 @@ const SideBar = () => {
     return (
         <div className='sideBar'>
             <ul>
-                {/* <Link to='/'> */}
+                <Link to='/'>
                     <li className='active'>
                         <span className='sideBar_icon'>
                             <AiOutlineHome />
                         </span>
                             Home
                     </li>
-                {/* </Link> */}
+                </Link>
                 {/* <Link to='/soon'> */}
                     <li className=''>
                         <span className='sideBar_icon'>

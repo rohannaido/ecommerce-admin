@@ -1,7 +1,11 @@
 import './NavBar.css'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className='navBar'>
             <div className='navBar_logoMenuDiv'>
@@ -12,7 +16,7 @@ const NavBar = () => {
                     ONE ADMIN
                 </div>
             </div>
-            <div>
+            <div onClick={() => navigate('/login')}>
                 Login
             </div>
         </div>
