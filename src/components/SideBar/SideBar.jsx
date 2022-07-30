@@ -29,7 +29,7 @@ const SideBar = () => {
                     </li>
                 </Link>
                 <Link to='/products'>
-                    <li className={`${(currPage === '/products') && 'active'}`}>
+                    <li className={`${(currPage === 'products') && 'active'}`}>
                         <span className='sideBar_icon'>
                             <AiOutlineShop />
                         </span>

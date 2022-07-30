@@ -1,29 +1,26 @@
 import { useState } from 'react';
 import './Login.css';
-// import { useNavigate } from 'react-router-dom'
-// import { useDispatch } from "react-redux";
+import { loginService } from '../../service/auth'; 
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
     const [loginForm, setLoginForm] = useState({
-        email: "",
+        username: "",
         password: "",
     });
 
-    const loginApp = () => {};
-
-
     // const dispatch = useDispatch();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className='loginPage'>
             <form className='loginPage_form'>
                 <h2>Sign In</h2>
                 <label htmlFor='email'>
-                    Email Address
-                    <input type="email" name='email' value={loginForm.email} onChange={(e) => setLoginForm(prev => ({...prev, 
-                        email: e.target.value}) )} />
+                    Username
+                    <input type="text" name='username' value={loginForm.username} onChange={(e) => setLoginForm(prev => ({...prev, 
+                        username: e.target.value}) )} />
                 </label>
                 <label htmlFor='password'>
                     Password
@@ -35,8 +32,8 @@ const Login = () => {
                     <button className='loginPage_signInBtn' onClick={(e) => {
                         e.preventDefault();
                         try{
-                            // loginApp(dispatch, loginForm.email, loginForm.password)
-                            // .then(() => navigate('/'));
+                            loginService(loginForm)
+                            .then(() => navigate('/'));
                         }
                         catch(error){
                             console.log(error);
@@ -48,8 +45,8 @@ const Login = () => {
                     <button className='loginPage_signInBtn guest' onClick={(e) => {
                         e.preventDefault();
                         try{
-                            // loginApp(dispatch, "ram", "thisisit")
-                            // .then(() => navigate('/'));
+                            loginService({username: "ram", password:"thisisit"})
+                            .then(() => navigate('/'));
                         }
                         catch(error){
                             console.log(error);
