@@ -1,3 +1,25 @@
 .productsPage{
     padding: 1rem;
 }
+
+.productsPage_headerDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.productsPage_addProduct{
+    font-size: inherit;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: inherit;
+}
+
+.productsPage_addProduct:hover{
+    outline: 1px solid gray;
+    cursor: pointer;
+}

@@ -1,8 +1,12 @@
 import './ProductRow.css';
 import { FiEdit2 } from 'react-icons/fi'
 import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom';
 
 const ProductRow = ({productItem}) => {
+
+    const navigate = useNavigate();
+
     return (
         <tr className='productRow'>
             <td className='productRow_idCell'>
@@ -17,7 +21,7 @@ const ProductRow = ({productItem}) => {
             <td>{(productItem.inStock) ? 'Yes' : 'No'}</td>
             <td>₹ {productItem.price}</td>
             <td className='productRow_actions'>
-                <span className='productRow_editIcon'>
+                <span className='productRow_editIcon' onClick={() => { navigate('/product/' + productItem._id) }}>
                     <AiOutlineEdit />
                 </span>
                 <span className='productRow_deleteIcon'>
