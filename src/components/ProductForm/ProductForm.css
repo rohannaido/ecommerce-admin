@@ -44,6 +44,19 @@
     border: 1px solid #9ca3af;
 }
 
+.productForm_addProductButton{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.productForm_addProductButton:hover{
+    outline: 2px solid blue;
+}
 @media screen and (max-width: 768px) {
     .productForm{
         width: 80%;
