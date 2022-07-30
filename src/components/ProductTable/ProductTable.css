@@ -1,0 +1,19 @@
+.productTable{
+    margin: 1rem 0;
+    border: 2px solid gainsboro;
+    max-width: 100%;
+    border-spacing: 0;
+    border-radius: 0.5rem;
+    /* display: none; */
+}
+
+.productTable th {
+    min-width: 5rem;
+    text-align: start;
+    padding: 0.5rem;
+    background-color: gainsboro;
+}
+
+.productTable tr:nth-child(odd) {
+    background-color: #eef2ff;
+}

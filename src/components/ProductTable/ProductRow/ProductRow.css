@@ -1,0 +1,48 @@
+.productRow{
+    font-size: 0.9rem;
+}
+
+
+.productRow td{
+    padding: 0.75rem 0.5rem;
+}
+
+.productRow_fullLine{
+    height: 1px;
+    background-color: black;
+    width: 100%;
+}
+
+td.productRow_imageCell{
+    padding: 0.25rem;    
+}
+
+.productRow_imageDiv{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.productRow_imageDiv img{
+    height: 90%;
+}
+
+.productRow_actions{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.25rem;
+}
+
+.productRow_editIcon{
+    cursor: pointer;
+}
+
+.productRow_deleteIcon{
+    color: red;
+    cursor: pointer;
+}

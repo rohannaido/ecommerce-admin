@@ -1,4 +1,4 @@
-import { userRequest } from '../requestMethods';
+import { userRequest, publicRequest } from '../requestMethods';
 
 export const getProducts = async () => {
     console.log("INSIDE GET PRODUCTS");
