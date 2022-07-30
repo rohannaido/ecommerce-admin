@@ -4,7 +4,7 @@ const getToken = () => {
     let output;
     if(localStorage.getItem("persist:adminecom")){
         try{
-            output = JSON.parse(JSON.parse(localStorage.getItem("persist:adminecom")).user).currentUser.accessToken;
+            output = JSON.parse(JSON.parse(localStorage.getItem("persist:adminecom")).user).value.accessToken;
             return output;
         }
         catch(error){

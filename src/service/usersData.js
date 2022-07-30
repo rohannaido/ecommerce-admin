@@ -3,7 +3,7 @@ import { userRequest } from '../requestMethods';
 export const getUsers = async () => {
     try {
         const res = await userRequest.get('/users');
-        console.log("USER Data: ". res.data);
+        console.log("USER Data: ", res.data);
         return res.data;
     }
     catch(error){

@@ -12,7 +12,7 @@ const ProductTable = ({productsArr}) => {
                     <th>
                         Image
                     </th>
-                    <th>
+                    <th className='productTable_headingTitle'>
                         Title
                     </th>
                     <th>

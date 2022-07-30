@@ -5,7 +5,9 @@ import { AiOutlineEdit, AiOutlineDelete } from 'react-icons/ai'
 const ProductRow = ({productItem}) => {
     return (
         <tr className='productRow'>
-            <td>{productItem._id}</td>
+            <td className='productRow_idCell'>
+                {productItem._id}
+            </td>
             <td className='productRow_imageCell'>
                 <div className='productRow_imageDiv'>
                     <img src={productItem.img} alt={productItem.title} />
