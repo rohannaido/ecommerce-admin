@@ -1,7 +1,8 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
-import { HashRouter, Routes } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <div className='app_content'>
           <SideBar />
           <Routes>
-            {/* <Route path='/' element={< />} /> */}
+            <Route path='/' element={<Home />} />
           </Routes>
         </div>
       </HashRouter>
