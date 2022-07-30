@@ -1,3 +1,16 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  /* outline: 1px solid greenyellow; */
+}
+
+:root{
+  --navbar-height: 4rem;
+  --sidebar-width: 300px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

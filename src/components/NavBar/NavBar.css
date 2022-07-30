@@ -1,0 +1,36 @@
+.navBar{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: var(--navbar-height);
+    box-shadow: 0 0 7px 0px gainsboro;
+    background-color: white;
+}
+
+.navBar_logoMenuDiv{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.navBar_logoImg{
+    width: 175px;
+}
+
+.navBar_logoImg img{
+    width: 100%;
+}
+
+.navBar_menuIcon{
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .navBar_menuIcon{
+        display: block;
+    }
+}
