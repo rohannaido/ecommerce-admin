@@ -1,5 +1,5 @@
 import { publicRequest, userRequest } from '../requestMethods';
-import { userLogIn } from '../redux/userRedux';
+import { userLogIn, userLogOut } from '../redux/userRedux';
 
 export const loginService = async (dispatch, user) => {
     try{
@@ -13,3 +13,7 @@ export const loginService = async (dispatch, user) => {
         throw error;
     }
 };
+
+export const signOutApp = async (dispatch) => {
+    dispatch(userLogOut());
+}

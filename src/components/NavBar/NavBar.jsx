@@ -1,6 +1,7 @@
 import './NavBar.css'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { useNavigate } from 'react-router-dom';
+import LoginButton from '../LoginButton/LoginButton';
 
 const NavBar = () => {
 
@@ -16,8 +17,9 @@ const NavBar = () => {
                     ONE ADMIN
                 </div>
             </div>
-            <div onClick={() => navigate('/login')}>
-                Login
+            {/* <div onClick={() => navigate('/login')}> */}
+            <div>
+                <LoginButton />
             </div>
         </div>
     )
