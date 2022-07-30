@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './Login.css';
 import { loginService } from '../../service/auth'; 
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
 
@@ -10,7 +11,7 @@ const Login = () => {
         password: "",
     });
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     return (
@@ -32,7 +33,7 @@ const Login = () => {
                     <button className='loginPage_signInBtn' onClick={(e) => {
                         e.preventDefault();
                         try{
-                            loginService(loginForm)
+                            loginService(dispatch, loginForm)
                             .then(() => navigate('/'));
                         }
                         catch(error){
@@ -45,7 +46,7 @@ const Login = () => {
                     <button className='loginPage_signInBtn guest' onClick={(e) => {
                         e.preventDefault();
                         try{
-                            loginService({username: "ram", password:"thisisit"})
+                            loginService(dispatch, {username: "ram", password:"thisisit"})
                             .then(() => navigate('/'));
                         }
                         catch(error){
