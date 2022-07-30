@@ -19,9 +19,15 @@
     width: 175px;
 }
 
+.navBar_logoText{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* 
 .navBar_logoImg img{
     width: 100%;
-}
+} */
 
 .navBar_menuIcon{
     font-size: 1.5rem;

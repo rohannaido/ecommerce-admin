@@ -8,9 +8,8 @@ const NavBar = () => {
                 <div className='navBar_menuIcon'>
                         <GiHamburgerMenu />
                     </div>
-                <div className='navBar_logoImg'>
-                    logo
-                    {/* <img src={logo} alt="App logo" /> */}
+                <div className='navBar_logoText'>
+                    ONE ADMIN
                 </div>
             </div>
             <div>

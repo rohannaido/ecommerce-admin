@@ -1,0 +1,58 @@
+.sideBar{
+    min-width: var(--sidebar-width);
+    min-height: calc(100vh - var(--navbar-height));
+    background-color: white;
+}
+
+.sideBar a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.sideBar a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+.sideBar_icon{
+    font-size: 1.25rem;
+}
+
+.sideBar ul {
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    padding: 1rem 0;
+}
+
+.sideBar ul li{
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 2rem;
+}
+
+.sideBar ul li:hover{
+    background-color: #f3f4f6;
+}
+
+.sideBar ul li.active{
+    background-color: #bae6fd;
+}
+
+@media screen and (max-width: 768px) {
+    .sideBar{
+        transform: translateX(-100%);
+        transition: transform 0.2s;
+    }
+    .show-sidebar{
+        transform: translateX(0%);
+    }
+}
