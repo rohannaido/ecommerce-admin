@@ -5,6 +5,7 @@ const getToken = () => {
     if(localStorage.getItem("persist:adminecom")){
         try{
             output = JSON.parse(JSON.parse(localStorage.getItem("persist:adminecom")).user).value.accessToken;
+            // console.log(output);
             return output;
         }
         catch(error){

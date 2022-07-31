@@ -8,14 +8,18 @@ import Users from './pages/Users/Users';
 import Products from './pages/Products/Products';
 import EditProduct from './pages/Product/EditProduct';
 import NewProduct from './pages/Product/NewProduct';
+import { useState } from 'react';
 
 function App() {
+
+  const [drawer, setDrawer] = useState(false);
+
   return (
     <div className="App">
       <HashRouter>
-        <NavBar />
+        <NavBar setDrawer={setDrawer} />
         <div className='app_content'>
-          <SideBar />
+          <SideBar drawer={drawer}/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/users' element={<Users />} />

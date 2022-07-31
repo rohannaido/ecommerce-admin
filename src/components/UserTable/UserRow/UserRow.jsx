@@ -13,7 +13,7 @@ const UserRow = ({userItem}) => {
                 </div>
             </td>
             <td>{userItem.username}</td>
-            <td>₹ {userItem.email}</td>
+            <td>{userItem.email}</td>
             <td>{(userItem.isAdmin) ? 'Yes' : 'No'}</td>
             <td className='userRow_actions'>
                 <span className='userRow_editIcon'>

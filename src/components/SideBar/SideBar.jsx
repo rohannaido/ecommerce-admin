@@ -4,13 +4,13 @@ import { FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
-const SideBar = () => {
+const SideBar = ({drawer}) => {
 
     const location = useLocation();
     const currPage = location.pathname.split('/')[1];
 
     return (
-        <div className='sideBar'>
+        <div className={`sideBar ${drawer && 'show-sidebar'}`}>
             <ul>
                 <Link to='/'>
                     <li className={`${(currPage === '') && 'active'}`}>
