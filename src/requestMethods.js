@@ -10,10 +10,13 @@ const getToken = () => {
         }
         catch(error){
             console.log(error);
+            return ''
         }
     }
     return ''
 }
+
+
 
 const BASE_URL = "https://ecommerceapi19.herokuapp.com/api/";
 const TOKEN = getToken();
@@ -22,12 +25,14 @@ export const publicRequest = axios.create({
     baseURL: BASE_URL,
 })
 
-export const userRequest = (function(){
+export function createUserRequest(){
     const TOKEN = getToken();
     return axios.create({
     baseURL: BASE_URL,
     headers: {
-        token: `Bearer ${TOKEN}`
+        token: `Bearer ${getToken()}`
     }
-})
-}());
+});
+}
+
+export const userRequest = createUserRequest();

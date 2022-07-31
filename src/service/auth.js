@@ -3,7 +3,6 @@ import { userLogIn, userLogOut } from '../redux/userRedux';
 
 export const loginService = async (dispatch, user) => {
     try{
-        console.log("SENDING TO SERVER:", user);
         const res = await publicRequest.post('/auth/login', user);
         console.log("LOGIN RES : ", res.data);
         dispatch(userLogIn(res.data))

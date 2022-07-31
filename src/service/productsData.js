@@ -1,5 +1,4 @@
-import { async } from '@firebase/util';
-import { userRequest, publicRequest } from '../requestMethods';
+import { createUserRequest, publicRequest } from '../requestMethods';
 
 export const getProducts = async () => {
     console.log("INSIDE GET PRODUCTS");
@@ -29,6 +28,7 @@ export const getProductById = async (productId) => {
 export const deleteProducts = async (id) => {
     console.log("INSIDE DELETE PRODUCTS");
     try{
+        let userRequest = createUserRequest();
         // const res = await userRequest.delete(`/products/${id}`);
         console.log("DELETE PRODUCT ");
     }
@@ -40,6 +40,7 @@ export const deleteProducts = async (id) => {
 
 export const updateProduct = async (id, product) => {
     try{
+        let userRequest = createUserRequest();
         console.log("INSIDE UPDATE PRODUCT: ",product);
         const res = await userRequest.put(`/products/${id}`, product);
         return res.data;
@@ -52,6 +53,7 @@ export const updateProduct = async (id, product) => {
 
 export const addProduct = async (product) => {
     try {
+        let userRequest = createUserRequest();
         console.log(product);
         const res = await userRequest.post("/products", product);
         console.log(res.data);    
