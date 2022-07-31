@@ -5,7 +5,7 @@ const getToken = () => {
     if(localStorage.getItem("persist:adminecom")){
         try{
             output = JSON.parse(JSON.parse(localStorage.getItem("persist:adminecom")).user).value.accessToken;
-            // console.log(output);
+            // console.log("GET TOKEN ", output);
             return output;
         }
         catch(error){
@@ -22,9 +22,12 @@ export const publicRequest = axios.create({
     baseURL: BASE_URL,
 })
 
-export const userRequest = axios.create({
+export const userRequest = (function(){
+    const TOKEN = getToken();
+    return axios.create({
     baseURL: BASE_URL,
     headers: {
         token: `Bearer ${TOKEN}`
     }
 })
+}());

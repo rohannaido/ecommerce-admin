@@ -21,7 +21,10 @@ const LoginButton = () => {
             :
             <div>
                 <span>Hi, {displayName}</span>
-                <button className="loginButton_signOutBtn" onClick={() => signOutApp(dispatch)}>
+                <button className="loginButton_signOutBtn" onClick={() => {
+                    signOutApp(dispatch)
+                    navigate('/');
+                    }}>
                     Sign Out
                 </button>
             </div>}
