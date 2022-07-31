@@ -1,3 +1,4 @@
+import { async } from '@firebase/util';
 import { userRequest, publicRequest } from '../requestMethods';
 
 export const getProducts = async () => {
@@ -12,6 +13,18 @@ export const getProducts = async () => {
     }
 };
 
+export const getProductById = async (productId) => {
+    console.log("INSIDE GET PRODUCT BY ID : ", productId);
+    try{
+        const res = await publicRequest.get('/products/find/' + productId);
+        console.log("DATA FOR ID ", res.data);
+        return res.data;
+    }
+    catch(error) {
+        console.log("GET PRODUCT ERROR : ",error);
+        throw error;
+    }
+}
 
 export const deleteProducts = async (id) => {
     console.log("INSIDE DELETE PRODUCTS");

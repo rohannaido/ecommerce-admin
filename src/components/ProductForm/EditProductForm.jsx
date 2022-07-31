@@ -1,24 +1,36 @@
 import './ProductForm.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { addProduct } from '../../service/productsData';
+import { updateProduct } from '../../service/productsData';
 import app from '../../firebaseConfig';
+import { useNavigate } from 'react-router-dom';
 
-const ProductForm = () => {
+const EditProductForm = ({productData}) => {
 
-    const [ formInputs, setFormInputs ] = useState({
-      title: "",
-      desc: "",
-      price: 1000,
-      inStock: "true"
-    });
+    const [ formInputs, setFormInputs ] = useState({});
     const [file, setFile] = useState("");
+    const navigate = useNavigate();
 
     const handleChange = () => {}
 
-    
+    useEffect(() => {
+        const { title, desc, price, inStock, img, _id } = productData;
+        setFormInputs({
+          title,
+          desc,
+          price,
+          inStock,
+          img,
+        });
+    },[productData]);
+
     const handleClick = (e) => {
         e.preventDefault();
+        if(!file){
+          updateProduct(productData._id, formInputs);
+          navigate('/products');
+        }
+
         const fileName = new Date().getTime() + file.name;
         const storage = getStorage(app);
         const storageRef = ref(storage, fileName);
@@ -49,7 +61,8 @@ const ProductForm = () => {
             //   console.log({...formInputs, categories: cat, img: downloadURL});
             //   const product = {...formInputs, categories: cat, img: downloadURL};
               const product = {...formInputs, img: downloadURL};
-              addProduct(product);
+              updateProduct(productData._id, product);
+              navigate('/products');
           });
         }
         );
@@ -59,6 +72,17 @@ const ProductForm = () => {
     return (
         <div className="productForm">
             <form>
+                <div className="productForm_itemData">
+                    <div className='productForm_imageDiv'>
+                      <img src={productData.img} alt="" />
+                    </div>
+                    <div className='productForm_contentsData'>
+                      <h3>{productData.title}</h3>
+                      <p>{productData.desc}</p>
+                      <p>₹ {productData.price}</p>
+                    </div>
+                </div>
+
                 <div className="productForm_item">
                     <label>Image</label>
                     <input type="file" id="file" onChange={(e) => {
@@ -102,11 +126,11 @@ const ProductForm = () => {
                 </div>
 
                 <button type="button" className="productForm_addProductButton" onClick={handleClick}>
-                    Add Product
+                    Update Product
                 </button>
             </form>
         </div>
     )
 }
 
-export default ProductForm;
+export default EditProductForm;

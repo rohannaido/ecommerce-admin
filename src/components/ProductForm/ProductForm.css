@@ -18,6 +18,25 @@
     width: 100%;
 }
 
+.productForm_itemData{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productForm_imageDiv{
+    height: 10rem;
+}
+
+.productForm_imageDiv img{
+    height: 100%;
+}
+
+.productForm_contentsData{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .productForm_item{
     display: flex;
     justify-content: space-between;
