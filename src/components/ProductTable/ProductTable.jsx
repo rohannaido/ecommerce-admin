@@ -22,7 +22,7 @@ const ProductTable = ({productsArr}) => {
                         Price
                     </th>
                     <th>
-                        Action
+                        Actions
                     </th>
                 </tr>
             </thead>

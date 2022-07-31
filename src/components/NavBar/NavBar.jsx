@@ -14,7 +14,7 @@ const NavBar = ({setDrawer}) => {
                         <GiHamburgerMenu />
                     </div>
                 <div className='navBar_logoText'>
-                    ONE ADMIN
+                    ONE Admin
                 </div>
             </div>
             {/* <div onClick={() => navigate('/login')}> */}

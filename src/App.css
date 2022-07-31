@@ -29,6 +29,7 @@
 @media screen and (max-width: 768px) {
   .app_content > div:nth-child(2){
     margin-left: 0;
+    padding: 1rem;
     min-width: 100vw;
   }
 }
